@@ -38,8 +38,9 @@ function start() {
 function fetchUrl(site, payloadSize) {
   var T1, T2, interval;
 
-  site += '?'+ payload(payloadSize);
   console.log('Fetching '+site);
+  console.log('Payload size: '+ payloadSize);
+  var payload = payload(payloadSize);
 
   console.log('setting interval');
   interval = setInterval(function(){
@@ -56,7 +57,10 @@ function fetchUrl(site, payloadSize) {
   fetch(site, {
     mode: 'no-cors',
     redirect: 'manual',
-    cache: 'no-cache'
+    cache: 'no-cache',
+    headers: {
+      'X-heist': payload
+    }
   })
   .then(function(result){
     T1 = performance.now();
