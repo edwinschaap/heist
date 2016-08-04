@@ -40,7 +40,7 @@ function fetchUrl(site, payloadSize) {
 
   console.log('Fetching '+site);
   console.log('Payload size: '+ payloadSize);
-  var payload = payload(payloadSize);
+  var payload = generatePayload(payloadSize);
 
   console.log('setting interval');
   interval = setInterval(function(){
@@ -77,7 +77,7 @@ function fetchUrl(site, payloadSize) {
 
 }
 
-function payload(length){
+function generatePayload(length){
   var r = '';
   for (var i=length; i>0; --i) {
     r += Math.random().toString(36).slice(2,3);
