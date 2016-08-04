@@ -57,6 +57,7 @@ function fetchUrl(site, payloadSize) {
   });
 
   fetch(site, {
+    method: 'post',
     mode: 'no-cors',
     redirect: 'manual',
     cache: 'no-cache',
