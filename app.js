@@ -3,7 +3,7 @@ function start() {
 
   var site = 'https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
 
-  var T1, T2minT1;
+  var T1, T2minT1, interval;
 
   function payload(length){
     var r = '';
@@ -19,6 +19,7 @@ function start() {
     })
     .then(function(result){
       T1 = performance.now();
+      clearInterval(interval);
     })
     .catch(function(e){
       console.log(e);
@@ -29,7 +30,7 @@ function start() {
     }
   }
 
-  setInterval(function(){
+  interval = setInterval(function(){
     var entries = performance.getEntries();
     var lastEntry = entries[entries.length-1];
     if (lastEntry.name == site) {
