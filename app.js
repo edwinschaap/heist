@@ -50,8 +50,8 @@ function fetchUrl(site, payloadSize) {
     var lastEntry = entries[entries.length-1];
     if (lastEntry.name == site) {
       T2 = lastEntry.responseEnd;
-//      T2minT1 = T2 - T1;
-//      console.log(T2minT1);
+      T2minT1 = T2 - T1;
+      console.log(T2minT1);
       console.log('T1: '+T1+', T2: '+T2);
     }
   });
@@ -60,7 +60,10 @@ function fetchUrl(site, payloadSize) {
     mode: 'no-cors',
     redirect: 'manual',
     cache: 'no-cache',
-    credentials: 'include'
+    credentials: 'include',
+    headers: {
+      'X-HEIST': generatePayload(8000)
+    }
   })
   .then(function(result){
     T1 = performance.now();
