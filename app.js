@@ -13,7 +13,7 @@ function fetchUrl(site, payloadSize) {
   console.log('Payload size: '+ payloadSize);
   var payload = generatePayload(payloadSize);
 
-  site += '?a='+payload+'&b='+generatePayload(4000)+'&c='+generatePayload(4000);
+  site += '?a='+payload+'&b='+generatePayload(4000)+'&c='+generatePayload(4000)+'&d='+generatePayload(4000);
 
   console.log('setting interval');
   interval = setInterval(function(){
