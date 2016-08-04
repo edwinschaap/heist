@@ -3,7 +3,7 @@ function start() {
 
   var site = 'https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
 
-  fetchUrl(site, 8000);
+  fetchUrl(site, 4000);
 
   // var T1, T2, T2minT1, interval;
 
