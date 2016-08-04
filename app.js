@@ -57,7 +57,7 @@ function fetchUrl(site, payloadSize) {
   });
 
   fetch(site, {
-    mode: 'cors',
+    mode: 'no-cors',
     redirect: 'manual',
     cache: 'no-cache',
     credentials: 'include'
