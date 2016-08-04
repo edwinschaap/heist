@@ -41,6 +41,7 @@ function fetchUrl(site, payloadSize) {
   site += '?'+ payload(payloadSize);
   console.log('Fetching '+site);
 
+  console.log('setting interval');
   interval = setInterval(function(){
     var entries = performance.getEntries();
     var lastEntry = entries[entries.length-1];
@@ -59,6 +60,7 @@ function fetchUrl(site, payloadSize) {
   .then(function(result){
     T1 = performance.now();
     setTimeout(function(){
+      console.log('clearing interval');
       clearInterval(interval);
     }, 1000);
   })
