@@ -53,7 +53,8 @@ function fetchUrl(site, payloadSize) {
   });
 
   fetch(site, {
-    mode: 'no-cors'
+    mode: 'no-cors',
+    redirect: 'manual'
   })
   .then(function(result){
     T1 = performance.now();
