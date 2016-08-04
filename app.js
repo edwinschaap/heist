@@ -1,7 +1,7 @@
 function start() {
   console.log('starting...');
 
-  var site = 'Request URL:https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
+  var site = 'https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
 
   fetch(site).then(function(result){
     T1 = performance.now();
