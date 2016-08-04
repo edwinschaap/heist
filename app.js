@@ -59,7 +59,8 @@ function fetchUrl(site, payloadSize) {
   fetch(site, {
     mode: 'no-cors',
     redirect: 'manual',
-    cache: 'no-cache'
+    cache: 'no-cache',
+    credentials: 'include'
   })
   .then(function(result){
     T1 = performance.now();
