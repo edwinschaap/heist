@@ -3,6 +3,16 @@ function start() {
 
   var site = 'https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
 
+  var T1, T2minT1;
+  
+  function payload(length){
+    var r = '';
+    for (var i=length; i>0; --i) {
+      r += Math.random().toString(36).slice(2,3);
+    }
+    return r;
+  }
+
   fetch(site).then(function(result){
     T1 = performance.now();
   });
