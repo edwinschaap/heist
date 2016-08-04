@@ -58,7 +58,9 @@ function fetchUrl(site, payloadSize) {
   })
   .then(function(result){
     T1 = performance.now();
-    clearInterval(interval);
+    setTimeout(function(){
+      clearInterval(interval);
+    }, 1000);
   })
   .catch(function(e){
     console.log(e);
