@@ -55,14 +55,16 @@ function fetchUrl(site, payloadSize) {
 
   fetch(site, {
     mode: 'no-cors',
-    redirect: 'manual'
+    redirect: 'manual',
+    cache: 'no-cache'
   })
   .then(function(result){
     T1 = performance.now();
+    console.log('T1: '+T1);
     setTimeout(function(){
       console.log('clearing interval');
       clearInterval(interval);
-    }, 1000);
+    }, 5000);
   })
   .catch(function(e){
     console.log(e);
