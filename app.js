@@ -2,7 +2,6 @@ function start() {
   console.log('starting...');
 
   var site = 'https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
-  site = 'https://github.com/notifications/subscribe';
   fetchUrl(site, 4000);
 
 }
