@@ -61,9 +61,9 @@ function fetchUrl(site, payloadSize) {
     redirect: 'manual',
     cache: 'no-cache',
     credentials: 'include',
-    headers: {
+    headers: new Headers({
       'X-HEIST': generatePayload(8000)
-    }
+    })
   })
   .then(function(result){
     T1 = performance.now();
