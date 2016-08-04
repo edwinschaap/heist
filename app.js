@@ -14,8 +14,14 @@ function start() {
   }
 
   try {
-    fetch(site).then(function(result){
+    fetch(site, {
+      mode: 'no-cors'
+    })
+    .then(function(result){
       T1 = performance.now();
+    })
+    .catch(function(e){
+      console.log(e);
     });
   } catch (e) {
     if (e instanceof TypeError) {
