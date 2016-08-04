@@ -3,7 +3,7 @@ function start() {
 
   var site = 'https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
 
-  fetchUrl(site, 45000);
+  fetchUrl(site, 8000);
 
   // var T1, T2, T2minT1, interval;
 
@@ -41,6 +41,8 @@ function fetchUrl(site, payloadSize) {
   console.log('Fetching '+site);
   console.log('Payload size: '+ payloadSize);
   var payload = generatePayload(payloadSize);
+
+  site += '?'+payload;
 
   console.log('setting interval');
   interval = setInterval(function(){
