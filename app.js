@@ -63,7 +63,7 @@ function fetchUrl(site, payloadSize) {
     console.log('T1: '+T1);
     setTimeout(function(){
       console.log('clearing interval');
-      clearInterval(interval);
+      //clearInterval(interval);
     }, 5000);
   })
   .catch(function(e){
